@@ -1,0 +1,55 @@
+body {
+    font-family: "Montserrat";
+    margin: 0
+}
+
+div {
+    display: block;
+}
+
+#topbar {
+    background-color: #2274A5;
+    height: 2rem;
+    padding: 1rem 1rem 0 1rem;
+    line-height: 38px;
+}
+
+#calendar button {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#left {
+    float: left;
+    color: white;
+    font-size: 20px;
+}
+
+#right {
+    float: right; 
+    color: white;
+}
+
+#right img {
+    padding-left: 2rem;
+}
+
+#calendar {
+    max-width: inherit;
+    margin-top: 1rem;
+}
+
+#suggested {
+    height: 200px;
+    background-color: #FFF;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#footer {
+    height: 2rem;
+    background-color: #2274A5;
+    color: #BFC0C0;
+    text-align: center;
+    padding-top: 1rem;
+}
