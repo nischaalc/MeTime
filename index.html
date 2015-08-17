@@ -16,6 +16,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/fullcalendar.css"/>
 
     <!-- Favicon
@@ -28,29 +29,50 @@
     <script src="JS/main.js"></script>
     
 </head>
-
+    
 <body>
-    <div id = "topbar">
-        <div id = "left">
-            <span>Username</span>
+    <div id="toplayer">
+        <div id="top">
+            <div id="left">
+                <span>MeTime</span>
+            </div>
+            <div id="right">
+                <span><a href="users.html">Sign in</a></span>
+            </div>
         </div>
-        <div id = "right">
-            <img src= "img/Settings-02-24.png"/>
-            <img src= "img/Add-New-24.png"/>
-            <img src="img/User-Profile-24.png"/>
+
+        <div id="welcome">
+            <div id="intro">
+                <span>MeTime helps you reach more of your goals, faster.</span>
+            </div>
+            <div id="flavor">
+                <span>Just tell us what you want to do and we'll figure out when.</span>
+            </div>
         </div>
-    </div>    
-    
-    <div id = "calendar">
-    </div>
-    
-    <div id = "suggested">
-        <h4>Suggested Events</h4>
-    </div>
-    
-    <div id = "footer">
-        <span>&copy; Cameron Spencer, Roger White, Nischaal Cooray</span>
+        
+        <div id="signcontainer">
+            <div id="signup">
+                <form>
+                    <span class="join">Let's get started!</span>
+                    <p>
+                        <input id="wholename" name="wholename" required="required" type="text" placeholder="First and Last Name"/>
+                    </p>    
+                    <p>
+                        <input id="email" name="email" required="required" type="text" placeholder="Email Address"/>
+                    </p> 
+                    <p>
+                        <input id="password" name="password" required="required" type="password" placeholder="Password"/>
+                    </p> 
+                    <p class="login-button">
+                        <input type="submit" value="Join"/>
+                    </p>
+                </form>
+                <a class="member" href="users.html">Already a member?</a>  
+            </div>
+        </div>
+        
+        <div id="foot">
+            <span>&copy; Cameron Spencer, Roger White, Nischaal Cooray</span>
+        </div>
     </div>
 </body>
-    
-</html>
