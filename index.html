@@ -7,6 +7,7 @@
     <title>MeTime</title>
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-signin-client_id" content="593421187274-6oq2kl1u02u4k97lps8vu2tdmpgofpep.apps.googleusercontent.com">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +28,7 @@
     <script src="JS/moment.min.js"></script>
     <script src="JS/fullcalendar.js"></script>
     <script src="JS/main.js"></script>
-    
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </head>
     
 <body>
@@ -49,6 +50,8 @@
                 <span>Just tell us what you want to do and we'll figure out when.</span>
             </div>
         </div>
+      
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
         
         <div id="signcontainer">
             <div id="signup">
@@ -63,18 +66,14 @@
                     <p>
                         <input id="password" name="password" required="required" type="password" placeholder="Password"/>
                     </p> 
-                    <p class="login-button">
+                    <p class="login button">
                         <input type="submit" value="Join"/>
                     </p>
                 </form>
                 <a class="member" href="users.html">Already a member?</a>  
             </div>
         </div>
-        
-        <div id="info">
-            <a class="info-link" href="about.html">Want to learn more about MeTime? </a>
-        </div>
-        
+            
         <div id="foot">
             <span>&copy; Cameron Spencer, Roger White, Nischaal Cooray</span>
         </div>

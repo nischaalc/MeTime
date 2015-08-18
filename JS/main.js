@@ -1,5 +1,5 @@
 $(window).load(function () {
-
+    "use strict";
     var height = ($(window).height() / 1.5);
     
     $('#calendar').fullCalendar({
@@ -69,3 +69,27 @@ $(window).load(function () {
         ]
     });
 });
+
+function onSuccess(googleUser) {
+    "use strict";
+    console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+}
+
+function onFailure(error) {
+    "use strict";
+    console.log(error);
+}
+
+function renderButton() {
+    "use strict";
+    gapi.signin2.render('my-signin2', {
+        'scope': 'https://www.googleapis.com/auth/plus.login',
+        'width': 200,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'cookiepolicy': 'single_host_origin',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+    });
+}

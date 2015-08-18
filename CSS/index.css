@@ -20,7 +20,7 @@ html {
 }
 
 #top a {
-    border-radius: 20px;
+    border-radius: 8px;
     background-color: white;
     text-decoration: none;
     color: #19323C;
@@ -49,6 +49,7 @@ html {
 
 #signup {
     text-align: center;
+    z-index: 1
 }
 
 #signcontainer {
@@ -118,3 +119,13 @@ input[type=submit] {
     font-size: 1.2rem;
 }
 
+#signin {
+    z-index: 0;
+    opacity: 0;
+}
+
+#tologin:target ~ #signcontainer #signin {
+    animation-name: fadeInLeft;
+    animation-delay: .1s;
+    z-index: 1;
+}
