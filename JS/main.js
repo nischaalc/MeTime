@@ -2,6 +2,7 @@ function onSuccess(googleUser) {
     "use strict";
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     window.location.href = "http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
+    console.log(googleUser.getBasicProfile());
 }
 
 function renderButton() {
