@@ -68,13 +68,13 @@ $(window).load(function () {
             }
         ]
     });
-    $('#username').text(getUrlVars());
+    console.log(getUrlVars());
 });
 
 function onSuccess(googleUser) {
     "use strict";
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    window.location.href("http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
+    window.location.href("http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName());
 }
 
 function renderButton() {
