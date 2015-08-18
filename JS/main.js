@@ -68,7 +68,7 @@ $(window).load(function () {
             }
         ]
     });
-    $('#username').text(getUrlVars());
+    console.log(getUrlVars());
 });
 
 function onSuccess(googleUser) {
