@@ -68,12 +68,13 @@ $(window).load(function () {
             }
         ]
     });
+    $('#username').text(getUrlVars());
 });
 
 function onSuccess(googleUser) {
     "use strict";
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    window.location.replace("http://nischaalc.github.io/MeTime/users?" + googleUser.getBasicProfile().getName());
+    window.location.href("http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
 }
 
 function renderButton() {
@@ -85,7 +86,19 @@ function renderButton() {
         'longtitle': true,
         'theme': 'dark',
         'cookiepolicy': 'single_host_origin',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
+        'onsuccess': onSuccess
     });
+}
+    
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
 }
