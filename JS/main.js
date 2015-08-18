@@ -75,15 +75,10 @@ function onSuccess(googleUser) {
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
 }
 
-function onFailure(error) {
-    "use strict";
-    console.log(error);
-}
-
 function renderButton() {
     "use strict";
     gapi.signin2.render('my-signin2', {
-        'scope': 'https://www.googleapis.com/auth/plus.login',
+        'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/calendar',
         'width': 200,
         'height': 50,
         'longtitle': true,
