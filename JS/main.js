@@ -5,10 +5,9 @@ function onSuccess(googleUser) {
 }
 
 function renderButton() {
-    var SCOPES = ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/calendar'];
     "use strict";
     gapi.signin2.render('my-signin2', {
-        'scope': SCOPES,
+        'scope': 'https://www.googleapis.com/auth/plus.login+https://www.googleapis.com/auth/calendar',
         'width': 200,
         'height': 50,
         'longtitle': true,
