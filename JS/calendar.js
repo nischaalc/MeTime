@@ -69,7 +69,7 @@ $(window).load(function () {
         ]
     });
     var name = getUrlVars()['name'];
-    console.log(name);
+    $('#username').text(name);
 });
 
 function getUrlVars() {
