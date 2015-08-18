@@ -68,7 +68,8 @@ $(window).load(function () {
             }
         ]
     });
-    console.log(getUrlVars());
+    var name = getUrlVars()['name'];
+    console.log(name);
 });
 
 function getUrlVars() {
