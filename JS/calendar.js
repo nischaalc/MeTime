@@ -68,7 +68,7 @@ $(window).load(function () {
             }
         ]
     });
-    var name = getUrlVars()['name'];
+    var name = getUrlVars()['name'][1];
     console.log(name);
 });
 
