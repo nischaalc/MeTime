@@ -73,6 +73,7 @@ $(window).load(function () {
 function onSuccess(googleUser) {
     "use strict";
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    window.location.replace("http://nischaalc.github.io/MeTime/users?" + googleUser.getBasicProfile().getName());
 }
 
 function renderButton() {
