@@ -69,6 +69,7 @@ $(window).load(function () {
         ]
     });
     var name = getUrlVars()['name'];
+    name = name.replace('%20', ' ');
     $('#username').text(name);
 });
 
