@@ -124,8 +124,7 @@ input[type=submit] {
     opacity: 0;
 }
 
-#tologin:target ~ #signcontainer #signin {
-    animation-name: fadeInLeft;
-    animation-delay: .1s;
-    z-index: 1;
+.google-auth {
+    margin: 0 auto;
+    display: block;
 }
