@@ -54,6 +54,7 @@ div {
     color: #2274a5;
     padding: 0.6rem;
     font-weight: bold;
+    margin-left: 1rem;
 }
 
 #dayinfo {
@@ -88,10 +89,16 @@ div {
 }
 
 .modal {
-    background-color: #2274a5;
-    height: auto;
-    width: 600px;
+    text-align: center;
+}
+
+.vex-dialog-message {
     display: none;
+}
+
+select {
+    width: 100%;
+    min-height: 2.5rem;
 }
 
 /* Spinner CSS */

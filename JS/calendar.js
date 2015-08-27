@@ -41,17 +41,21 @@ var allEvents = [
                 start: '2015-08-28',
                 end: '2015-08-29'
             }
-        ],
-    location;
+        ];
+var loc = '';
 
-$(window).load(function () {
+$(document).ready(function () {
     "use strict";
 
     $('#calendar').css('visibility', 'hidden');
     $('#dayinfo').hide();
     $('#footer').hide();
     
+    var today = moment();
+    
+    getLocation(today);
     createCalendar();
+    getWeather(loc, today);
     
     $('.spinner').fadeOut(750, function() {
         $('#calendar').fadeIn(function() {
@@ -64,9 +68,8 @@ $(window).load(function () {
     var name = getUrlVars()['name'];
     if (name.indexOf('%20') != -1)
         name = name.replace('%20', ' ');
-    $('#username').text(name);
+    $('#username').text(name);    
     
-    location = getLocation();
     var googleUser = window.localStorage.getItem("googleUser.object");
     console.log(googleUser);
 });
@@ -77,6 +80,7 @@ function createCalendar() {
     var day = moment().format('e');
     if (day == 7)
         day = 0;
+    
     $('#calendar').fullCalendar({
         header: {
             left: 'prev',
@@ -89,7 +93,7 @@ function createCalendar() {
         events: allEvents,
         dayClick: function(date, jsEvent, view) {
             populateDate(date);
-            getWeather(location, date);
+            getWeather(loc, date);
         },
         loading: function(isLoading, view) {
             if (isLoading) 
@@ -98,7 +102,7 @@ function createCalendar() {
                 $('.spinner').hide();
         }
     });
-
+    
     var today = moment();
     $('#title').html("<h2>Information for " + today.toString().substring(0, 15) + "</h2>");
 }
@@ -127,10 +131,13 @@ function getUrlVars() {
 function getLocation(date) {
     var url = 'http://api.wunderground.com/api/a13f71c3ae3eecbb/geolookup/q/autoip.json';
     
-    $.getJSON(url)
-        .done(function(data) {
-        return data.location.zip;
-    });
+    if (loc == '' || loc == null || loc == undefined) {
+        $.getJSON(url)
+            .done(function(data) {
+                loc = data.location.zip;
+                getWeather(loc, date)
+        });
+    }
 }
 
 function getWeather(zip, date) {
@@ -161,11 +168,25 @@ function displayWeather(icon, desc, high, low) {
 }
 
 $(function() {
-    var htmlString = '<div class="modal"><p>Test</p></div>'
-    $('.link').click(function() {
+    var goalString = '<div class="modal"><p>Goal</p><form><input type="text" name="goalname" placeholder="Name"><br></form></div>';
+    var classString = '<div class="modal"><p>Class</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="text" name="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><select><option value="monday">Monday</option><option value="tuesday">Tuesday</option><option value="wednesday">Wednesday</option>    <option value="thursday">Thursday</option><option value="friday">Friday</option><option value="saturday">Saturday</option><option value="Sunday">Sunday</option></select></form></div>';
+    var eventString = '<div class="modal"><p>Event</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="text" name="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><select><option value="monday">Monday</option><option value="tuesday">Tuesday</option><option value="wednesday">Wednesday</option>    <option value="thursday">Thursday</option><option value="friday">Friday</option><option value="saturday">Saturday</option><option value="Sunday">Sunday</option></select></form></div>';
+    
+    $('#classlink').click(function() {
         vex.dialog.open({
-            message: 'Test',
-            input: htmlString
+            input: classString
+        });
+    });
+    
+    $('#eventlink').click(function() {
+        vex.dialog.open({
+            input: eventString
+        });
+    });
+    
+    $('#goallink').click(function() {
+        vex.dialog.open({
+            input: goalString
         });
     });
 });
