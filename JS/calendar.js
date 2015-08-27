@@ -67,7 +67,8 @@ $(window).load(function () {
     $('#username').text(name);
     
     location = getLocation();
-    console.log(location);
+    var googleUser = window.localStorage.getItem("googleUser.object");
+    console.log(googleUser);
 });
 
 function createCalendar() {
