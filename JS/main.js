@@ -10,7 +10,7 @@ function onSuccess(googleUser) {
 function renderButton() {
     "use strict";
     gapi.signin2.render('my-signin2', {
-        'scope': 'profile https://www.googleapis.com/auth/calendar',
+        'scope': 'https://www.googleapis.com/auth/calendar profile',
         'width': 200,
         'height': 50,
         'longtitle': true,
