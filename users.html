@@ -16,35 +16,54 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/main.css">
-    <link rel="stylesheet" href="CSS/fullcalendar.css"/>
+    <link rel="stylesheet" href="CSS/fullcalendar.min.css"/>
+    <link rel="stylesheet" href="CSS/vex.css" />
+    <link rel="stylesheet" href="CSS/vex-theme-os.css" />
 
     <!-- Favicon
     <link rel="icon" type="image/png" href="images/favicon.png"> -->
     
     <!-- JavaScript -->
-    <script src="JS/jquery-2.1.4.min.js"></script>
+    <script src="JS/jquery-2.1.4.min.js"></script> 
     <script src="JS/moment.min.js"></script>
-    <script src="JS/fullcalendar.js"></script>
+    <script src="JS/fullcalendar.min.js"></script>
     <script src="JS/calendar.js"></script>
+    <script src="JS/vex.combined.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-os';</script>
     
 </head>
 
 <body>
+    
     <div id = "topbar">
         <div id = "left">
             <span id="username">Username</span>
         </div>
         <div id = "right">
-            <img src= "img/Add-New-24.png"/>
-            <img src="img/User-Profile-24.png"/>
+            <a href="#" class="link">Add</a>
         </div>
-    </div>    
+    </div>  
     
-    <div id = "calendar">
+    <div class="spinner">
+        <div class="cube1"></div>
+        <div class="cube2"></div>
     </div>
-    
-    <div id = "suggested">
-        <h4>Suggested Events</h4>
+
+    <div id = "calendar"></div>
+
+    <div id="dayinfo"> 
+        <div id="title">
+            <h2>Information for </h2>
+        </div>
+        
+        <div id="weather">
+            <p class="title">Weather</p>
+            <div class="weatherobject">
+            </div>
+        </div>
+        
+        <div id="events">
+        </div>
     </div>
     
     <div id = "footer">
