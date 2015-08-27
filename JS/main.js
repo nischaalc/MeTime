@@ -5,6 +5,7 @@ function onSuccess(googleUser) {
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
     window.location.href = "http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
     console.log(googleUser.getBasicProfile());
+    console.log(googleUser);
 }
 
 function renderButton() {

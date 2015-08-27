@@ -41,7 +41,8 @@ var allEvents = [
                 start: '2015-08-28',
                 end: '2015-08-29'
             }
-        ];
+        ],
+    location;
 
 $(window).load(function () {
     "use strict";
@@ -61,9 +62,12 @@ $(window).load(function () {
     });        
         
     var name = getUrlVars()['name'];
-    name = name.replace('%20', ' ');
+    if (name.indexOf('%20') != -1)
+        name = name.replace('%20', ' ');
     $('#username').text(name);
     
+    location = getLocation();
+    console.log(location);
 });
 
 function createCalendar() {
@@ -83,7 +87,8 @@ function createCalendar() {
         height: height,
         events: allEvents,
         dayClick: function(date, jsEvent, view) {
-            getLocation(date);
+            populateDate(date);
+            getWeather(location, date);
         },
         loading: function(isLoading, view) {
             if (isLoading) 
@@ -91,7 +96,14 @@ function createCalendar() {
             else 
                 $('.spinner').hide();
         }
-    }); 
+    });
+
+    var today = moment();
+    $('#title').html("<h2>Information for " + today.toString().substring(0, 15) + "</h2>");
+}
+
+function populateDate(date) {
+        $('#title').html("<h2>Information for " + date.toString().substring(0, 15) + "</h2>");
 }
 
 function addEvent() {
@@ -116,8 +128,7 @@ function getLocation(date) {
     
     $.getJSON(url)
         .done(function(data) {
-            getWeather(data.location.zip, date);
-            $('#dayinfo').fadeIn(500);
+        return data.location.zip;
     });
 }
 
