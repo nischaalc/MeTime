@@ -30,30 +30,23 @@
     
 <body>
     <div id="toplayer">
-        <div id="top">
-            <div id="left">
-                <span>MeTime</span>
+        <div id="main-content">
+            <div id="welcome">
+                <div id="intro">
+                    <span>MeTime helps you reach more of your goals, faster.</span>
+                </div>
+                <div id="flavor">
+                    <span>Just tell us what you want to do and we'll figure out when.</span>
+                </div>
             </div>
-            <div id="right">
-                <span><a href="users.html">Sign in</a></span>
-            </div>
-        </div>
 
-        <div id="welcome">
-            <div id="intro">
-                <span>MeTime helps you reach more of your goals, faster.</span>
-            </div>
-            <div id="flavor">
-                <span>Just tell us what you want to do and we'll figure out when.</span>
-            </div>
-        </div>
-        
-        <div id="signcontainer">
-            <div id="signup">
-                <form>
+            <div id="signcontainer">
+                <div id="signup">
                     <span class="join">Let's get started!</span>
-                        <div class="g-signin2 login button" data-onsuccess="onSuccess"></div>
-                </form> 
+                        <div id="wrapper">
+                            <div id="googleIn" class="g-signin2" data-onsuccess="onSuccess"></div>
+                        </div>
+                </div>
             </div>
         </div>
             

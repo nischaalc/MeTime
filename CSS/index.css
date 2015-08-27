@@ -28,9 +28,15 @@ html {
     font-weight: bold;
 }
 
+#main-content {
+    position: relative;
+    top: 10rem;
+}
+
 #welcome {
     margin: 2rem;
     color: white;
+    margin-bottom: 5rem;
 }
 
 #flavor {
@@ -65,22 +71,14 @@ html {
     color: #19323C;
 }
 
-input {
-    outline: none;
-    font-family: 
+#googleIn {
+    text-align: center;
+    margin-top: 1rem;
 }
 
-input[type=submit] {
-    width: 12rem;
-    padding: 6px;
-    background-color: #2274A5;
-    box-shadow: none;
-    border-width: 0;
-    border-radius: 8px;
-    height: 3rem;
-    font-size: 1rem;    
-    font-family: "Montserrat";
-    color: white;
+#wrapper {
+    margin: 0 auto;
+    display: inline-block;
 }
 
 .member {
@@ -109,11 +107,6 @@ input[type=submit] {
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-}
-
-#signin {
-    z-index: 0;
-    opacity: 0;
 }
 
 .google-auth {
