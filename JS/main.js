@@ -17,6 +17,7 @@ function renderButton() {
         'longtitle': true,
         'theme': 'dark',
         'cookiepolicy': 'single_host_origin',
-        'onsuccess': onSuccess
+        'onsuccess': onSuccess,
+        'fetch_basic_profile': false
     });
 }
