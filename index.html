@@ -18,15 +18,12 @@
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/main.css">
     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/fullcalendar.css"/>
 
     <!-- Favicon
     <link rel="icon" type="image/png" href="images/favicon.png"> -->
     
     <!-- JavaScript -->
     <script src="JS/jquery-2.1.4.min.js"></script>
-    <script src="JS/moment.min.js"></script>
-    <script src="JS/fullcalendar.js"></script>
     <script src="JS/main.js"></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </head>
@@ -55,22 +52,7 @@
             <div id="signup">
                 <form>
                     <span class="join">Let's get started!</span>
-                    <p>
-                        <input id="wholename" name="wholename" required="required" type="text" placeholder="First and Last Name"/>
-                    </p>    
-                    <p>
-                        <input id="email" name="email" required="required" type="text" placeholder="Email Address"/>
-                    </p> 
-                    <p>
-                        <input id="password" name="password" required="required" type="password" placeholder="Password"/>
-                    </p> 
-                    <p class="login button">
-                        <input type="submit" value="Join"/>
-                    </p>
-                    <p>Or</p>
-                    <span>
-                        <div class="g-signin2" data-onsuccess="onSuccess"></div>
-                    </span>
+                        <div class="g-signin2 login button" data-onsuccess="onSuccess"></div>
                 </form> 
             </div>
         </div>

@@ -70,16 +70,8 @@ input {
     font-family: 
 }
 
-input[type=text], input[type=password] {
-    border-radius: 5px;   
-    height: 1.2rem;
-    width: 350px;
-    padding: 0.5rem;
-    border-width: 0;
-}
-
 input[type=submit] {
-    width: 10rem;
+    width: 12rem;
     padding: 6px;
     background-color: #2274A5;
     box-shadow: none;

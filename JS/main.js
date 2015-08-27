@@ -1,3 +1,5 @@
+var clientID = '593421187274-6oq2kl1u02u4k97lps8vu2tdmpgofpep.apps.googleusercontent.com';
+
 function onSuccess(googleUser) {
     "use strict";
     console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -8,7 +10,7 @@ function onSuccess(googleUser) {
 function renderButton() {
     "use strict";
     gapi.signin2.render('my-signin2', {
-        'scope': 'https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/calendar',
+        'scope': 'profile https://www.googleapis.com/auth/calendar',
         'width': 200,
         'height': 50,
         'longtitle': true,
