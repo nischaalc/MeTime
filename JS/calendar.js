@@ -71,8 +71,18 @@ $(document).ready(function () {
     $('#username').text(name);    
     
     var accessToken = window.localStorage.getItem("googleUser.object");
-    console.log(accessToken);
+    getGCalEvents(accessToken);
 });
+
+function getGCalEvents(accessToken) {
+    var url = 'https://metime.herokuapp.com/getEvents?token=' + accessToken;
+    console.log(url);
+    
+    /*$.getJSON(url)
+        .done(function(data) {
+            console.log(data);
+    });*/
+}
 
 function createCalendar() {
     var height = ($(window).height() / 1.5);
