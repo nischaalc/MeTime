@@ -4,7 +4,6 @@ function onSuccess(googleUser) {
     "use strict";
     window.location.href = "http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
     window.localStorage.setItem("googleUser.object", googleUser);
-    googleUser.
 }
 
 function renderButton() {
