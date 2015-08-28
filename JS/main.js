@@ -4,7 +4,9 @@ function onSuccess(googleUser) {
     "use strict";
     //window.location.href = "http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
     window.localStorage.setItem("googleUser.object", googleUser.getAuthResponse().id_token);
+    console.log(googleUser);
     console.log(googleUser.getAuthResponse().access_token);
+    console.log(googleUser.getAuthResponse().id_token);
 }
 
 function renderButton() {
