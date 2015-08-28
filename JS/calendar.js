@@ -70,10 +70,9 @@ $(document).ready(function () {
         name = name.replace('%20', ' ');
     $('#username').text(name);    
     
-    var googleUser = window.localStorage.getItem("googleUser.object");
-    console.log(googleUser);
-    authToken = googleUser['access_token'];
-    console.log(authToken);
+    var googleUserIdToken = window.localStorage.getItem("googleUser.object");
+    console.log(googleUserIdToken);
+    authToken = googleUser;
 });
 
 function createCalendar() {
