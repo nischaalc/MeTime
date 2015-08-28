@@ -42,7 +42,7 @@ var allEvents = [
                 end: '2015-08-29'
             }
         ];
-var loc = '', authToken = '';
+var loc = '';
 
 $(document).ready(function () {
     "use strict";
@@ -70,9 +70,8 @@ $(document).ready(function () {
         name = name.replace('%20', ' ');
     $('#username').text(name);    
     
-    var googleUserIdToken = window.localStorage.getItem("googleUser.object");
-    console.log(googleUserIdToken);
-    authToken = googleUser;
+    var accessToken = window.localStorage.getItem("googleUser.object");
+    console.log(accessToken);
 });
 
 function createCalendar() {
