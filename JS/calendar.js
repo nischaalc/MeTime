@@ -72,7 +72,7 @@ $(document).ready(function () {
     
     var googleUser = window.localStorage.getItem("googleUser.object");
     console.log(googleUser);
-    authToken = googleUser.getAuthResponse()['access_token'];
+    authToken = googleUser['access_token'];
     console.log(authToken);
 });
 
