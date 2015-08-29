@@ -73,23 +73,14 @@ $(document).ready(function () {
 
 function getGCalEvents(token) {
     var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
-    console.log(url);
-    $.getJSON(url).done(function(data) {
-        console.log(data);
-    });
-    
-    /*var url = 'https://www.googleapis.com/calendar/v3/users/me/calendarList';
         
     $.ajax({
         url: url,
         dataType: 'json',
         success: function(data, status) {
             console.log(data);
-        },
-        beforeSend: function(xhr, settings) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
         }
-    });*/
+    });
 }
 
 function createCalendar() {
