@@ -58,7 +58,7 @@ $(document).ready(function () {
         $('#footer').fadeIn();
     });        
         
-    var name = getUrlVars()['name'];
+    var name = getUrlVars().name;
     if (name.indexOf('%20') != -1)
         name = name.replace('%20', ' ');
     $('#username').text(name);    
@@ -72,7 +72,6 @@ function getGCalEvents(token) {
         dataType: 'json',
         success: function(data, status) {
             allEvents = data.items;
-            console.log(allEvents);
             createCalendar();
         }
     });
@@ -84,6 +83,8 @@ function createCalendar() {
     var day = moment().format('e');
     if (day == 7)
         day = 0;
+    
+    console.log('InCal: ' + allEvents);
     
     $('#calendar').fullCalendar({
         header: {
