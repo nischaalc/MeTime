@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('#footer').hide();
     
     var today = moment();
+    var accessToken = window.localStorage.getItem("googleUser.object");
     
     getLocation(today);
     getGCalEvents(accessToken);
@@ -47,8 +48,6 @@ function createCalendar() {
     var day = moment().format('e');
     if (day == 7)
         day = 0;
-    
-    var accessToken = window.localStorage.getItem("googleUser.object");
     
     $('#calendar').fullCalendar({
         header: {
