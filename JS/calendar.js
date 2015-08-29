@@ -69,18 +69,27 @@ $(document).ready(function () {
     if (name.indexOf('%20') != -1)
         name = name.replace('%20', ' ');
     $('#username').text(name);    
-    
-    var accessToken = window.localStorage.getItem("googleUser.object");
-    getGCalEvents(accessToken);
 });
 
-function getGCalEvents(accessToken) {
-    var url = 'https://www.googleapis.com/calendar/v3/users/me/calendarList';
-        
-    $.getJSON(url)
-        .done(function(data) {
-            console.log(data);
+function getGCalEvents(token) {
+    var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
+    
+    $.getJSON(url).done(function(data) {
+        console.log(data);
     });
+    
+    /*var url = 'https://www.googleapis.com/calendar/v3/users/me/calendarList';
+        
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        success: function(data, status) {
+            console.log(data);
+        },
+        beforeSend: function(xhr, settings) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        }
+    });*/
 }
 
 function createCalendar() {
@@ -89,6 +98,9 @@ function createCalendar() {
     var day = moment().format('e');
     if (day == 7)
         day = 0;
+    
+    var accessToken = window.localStorage.getItem("googleUser.object");
+    getGCalEvents(accessToken);
     
     $('#calendar').fullCalendar({
         header: {
@@ -141,8 +153,7 @@ function getLocation(date) {
     var url = 'http://api.wunderground.com/api/a13f71c3ae3eecbb/geolookup/q/autoip.json';
     
     if (loc == '' || loc == null || loc == undefined) {
-        $.getJSON(url)
-            .done(function(data) {
+        $.getJSON(url).done(function(data) {
                 loc = data.location.zip;
                 getWeather(loc, date)
         });
