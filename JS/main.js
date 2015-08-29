@@ -4,6 +4,7 @@ function onSuccess(googleUser) {
     "use strict";
     window.location.href = "http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
     window.localStorage.setItem("googleUser.object", googleUser.Ka.access_token);
+    getGCalEvents();
 }
 
 function renderButton() {
@@ -16,5 +17,14 @@ function renderButton() {
         'theme': 'dark',
         'cookiepolicy': 'single_host_origin',
         'onsuccess': onSuccess
+    });
+}
+
+function getGCalEvents() {
+    var url = 'https://www.googleapis.com/calendar/v3/users/me/calendarList';
+        
+    $.getJSON(url)
+        .done(function(data) {
+            console.log(data);
     });
 }
