@@ -1,47 +1,4 @@
-var allEvents = [
-            {
-                title: 'Long Event',
-                start: '2015-08-10',
-                end: '2015-08-26'
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
-                start: '2015-08-26T16:00:00',
-                end: '2015-08-26T18:00:00'
-            },
-            {
-                title: 'Conference',
-                start: '2015-08-25',
-                end: '2015-08-27'
-            },
-            {
-                title: 'Lunch',
-                start: '2015-08-25T12:00:00',
-                end: '2015-08-25T14:00:00'
-            },
-            {
-                title: 'Happy Hour',
-                start: '2015-08-24T17:30:00',
-                end: '2015-08-24T19:00:00'
-            },
-            {
-                title: 'Dinner',
-                start: '2015-08-26T20:00:00',
-                end: '2015-08-26T22:00:00'
-            },
-            {
-                title: 'Birthday Party',
-                start: '2015-08-27T07:00:00',
-                end: '2015-08-27T09:00:00'
-            },
-            {
-                title: 'Click for Google',
-                url: 'http://google.com/',
-                start: '2015-08-28',
-                end: '2015-08-29'
-            }
-        ];
+var allEvents = [];
 var loc = '';
 
 $(document).ready(function () {
@@ -54,7 +11,7 @@ $(document).ready(function () {
     var today = moment();
     
     getLocation(today);
-    createCalendar();
+    getGCalEvents(accessToken);
     getWeather(loc, today);
     
     $('.spinner').fadeOut(750, function() {
@@ -78,7 +35,8 @@ function getGCalEvents(token) {
         url: url,
         dataType: 'json',
         success: function(data, status) {
-            console.log(data);
+            allEvents = data.items;
+            createCalendar();
         }
     });
 }
@@ -91,7 +49,6 @@ function createCalendar() {
         day = 0;
     
     var accessToken = window.localStorage.getItem("googleUser.object");
-    getGCalEvents(accessToken);
     
     $('#calendar').fullCalendar({
         header: {
