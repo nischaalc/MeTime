@@ -75,9 +75,8 @@ $(document).ready(function () {
 });
 
 function getGCalEvents(accessToken) {
-    var url = 'https://metime.herokuapp.com/getCalEvents?token=' + accessToken;
-    console.log(url);
-    
+    var url = 'https://www.googleapis.com/calendar/v3/users/me/calendarList';
+        
     $.getJSON(url)
         .done(function(data) {
             console.log(data);
