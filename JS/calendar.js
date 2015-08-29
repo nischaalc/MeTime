@@ -31,13 +31,12 @@ $(document).ready(function () {
 
 function getGCalEvents(token) {
     var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
-        
+
     $.ajax({
         url: url,
         dataType: 'json',
         success: function(data, status) {
             allEvents = data.items;
-            console.log(allEvents);
             createCalendar();
         }
     });
@@ -52,9 +51,7 @@ function createCalendar() {
     
     $('#calendar').fullCalendar({
         header: {
-            left: 'prev',
             center: 'title',
-            right: 'next'
         },
         firstDay: day,
         defaultView: 'basicWeek',
