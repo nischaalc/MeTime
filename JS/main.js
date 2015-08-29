@@ -1,9 +1,7 @@
-var clientID = '593421187274-6oq2kl1u02u4k97lps8vu2tdmpgofpep.apps.googleusercontent.com';
-
 function onSuccess(googleUser) {
     "use strict";
     window.localStorage.setItem("googleUser.object", googleUser.Ka.access_token);
-    getGCalEvents();
+    getGCalEvents(googleUser.Ka.access_token);
     //window.location.href = "http://nischaalc.github.io/MeTime/users?name=" + googleUser.getBasicProfile().getName();
 }
 
@@ -20,11 +18,17 @@ function renderButton() {
     });
 }
 
-function getGCalEvents() {
+function getGCalEvents(token) {
     var url = 'https://www.googleapis.com/calendar/v3/users/me/calendarList';
         
-    $.getJSON(url)
-        .done(function(data) {
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        success: function(data, status) {
             console.log(data);
+        },
+        beforeSend: function(xhr, settings) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+        }
     });
 }
