@@ -187,6 +187,7 @@ $(function() {
                     end = value.endtime;
                     priority = value.priorityRange;
                     console.log(name + " : " + start + " : " + end + " : " + priority);
+                }
             }
         });
     });
