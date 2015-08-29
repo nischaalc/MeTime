@@ -178,7 +178,10 @@ $(function() {
     
     $('#classlink').click(function() {
         vex.dialog.open({
-            input: classString
+            input: classString,
+            callback: function(value) {
+                console.log(value);   
+            }
         });
     });
     
