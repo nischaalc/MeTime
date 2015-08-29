@@ -173,14 +173,20 @@ function displayWeather(icon, desc, high, low) {
 
 $(function() {
     var goalString = '<div class="modal"><p>Goal</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="range" id="priority" value="0" step="0.5" min="0" max="5"><br></form></div>';
-    var classString = '<div class="modal"><p>Class</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="text" name="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><input type="checkbox" name="weekday" value="monday">Monday<br><input type="checkbox" name="weekday" value="tuesday">Tuesday<br><input type="checkbox" name="weekday" value="wednesday">Wednesday<br><input type="checkbox" name="weekday" value="thursday">Thursday<br><input type="checkbox" name="weekday" value="friday">Friday<br><input type="checkbox" name="weekday" value="saturday">Saturday<br><input type="checkbox" name="weekday" value="sunday">Sunday<br><input type="range" id="priority" value="0" step="0.5" min="0" max="5"><br>Priority</form></div>';
+    var classString = '<div class="modal"><p>Class</p><form><input type="text" name="classname" placeholder="Name"><br><input type="text" name="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><input type="checkbox" name="weekday" value="monday">Monday<br><input type="checkbox" name="weekday" value="tuesday">Tuesday<br><input type="checkbox" name="weekday" value="wednesday">Wednesday<br><input type="checkbox" name="weekday" value="thursday">Thursday<br><input type="checkbox" name="weekday" value="friday">Friday<br><input type="checkbox" name="weekday" value="saturday">Saturday<br><input type="checkbox" name="weekday" value="sunday">Sunday<br><input type="range" name="priorityRange" id="priority" value="0" step="0.5" min="0" max="5"><br>Priority</form></div>';
     var eventString = '<div class="modal"><p>Event</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="text" name="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><input type="checkbox" name="weekday" value="monday">Monday<br><input type="checkbox" name="weekday" value="tuesday">Tuesday<br><input type="checkbox" name="weekday" value="wednesday">Wednesday<br><input type="checkbox" name="weekday" value="thursday">Thursday<br><input type="checkbox" name="weekday" value="friday">Friday<br><input type="checkbox" name="weekday" value="saturday">Saturday<br><input type="checkbox" name="weekday" value="sunday">Sunday<br>Priority</form></div>';
     
+    var name, start = '', end = '', priority = [], priority = 0;
     $('#classlink').click(function() {
         vex.dialog.open({
             input: classString,
             callback: function(value) {
-                console.log(value);   
+                if (value != false) {
+                    name = value.classname;
+                    start = value.starttime;
+                    end = value.endtime;
+                    priority = value.priorityRange;
+                    console.log(name + " : " + start + " : " + end + " : " + priority);
             }
         });
     });
