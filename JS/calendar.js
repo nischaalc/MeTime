@@ -73,7 +73,7 @@ $(document).ready(function () {
 
 function getGCalEvents(token) {
     var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
-    
+    console.log(url);
     $.getJSON(url).done(function(data) {
         console.log(data);
     });
