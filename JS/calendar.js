@@ -78,10 +78,10 @@ function getGCalEvents(accessToken) {
     var url = 'https://metime.herokuapp.com/getCalEvents?token=' + accessToken;
     console.log(url);
     
-    /*$.getJSON(url)
+    $.getJSON(url)
         .done(function(data) {
             console.log(data);
-    });*/
+    });
 }
 
 function createCalendar() {
