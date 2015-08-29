@@ -51,7 +51,7 @@ function createCalendar() {
     
     $('#calendar').fullCalendar({
         header: {
-            center: 'title',
+            center: 'title'
         },
         firstDay: day,
         defaultView: 'basicWeek',
