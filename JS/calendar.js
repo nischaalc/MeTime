@@ -75,7 +75,7 @@ $(document).ready(function () {
 });
 
 function getGCalEvents(accessToken) {
-    var url = 'https://metime.herokuapp.com/getEvents?token=' + accessToken;
+    var url = 'https://metime.herokuapp.com/getCalEvents?token=' + accessToken;
     console.log(url);
     
     /*$.getJSON(url)
