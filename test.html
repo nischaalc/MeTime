@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>MeTime</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/vex.css" />
+    <link rel="stylesheet" href="CSS/vex-theme-os.css" />
+    
+    <link rel="stylesheet" href="CSS/jquery-ui.min.css"/>
+
+    <!-- Favicon
+    <link rel="icon" type="image/png" href="images/favicon.png"> -->
+    
+    <!-- JavaScript -->
+    <script src="JS/jquery-2.1.4.min.js"></script> 
+    <script src="JS/vex.combined.min.js"></script>
+    <script src="JS/jquery-ui.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-os';</script>
+    
+</head>
+
+<body>
+<a href="#" class="link" id="classlink">Add Class</a>
+<a href="#" class="link" id="goallink">Add Goal</a>
+<a href="#" class="link" id="eventlink">Add Event</a>
+    
+<p class="output">Output</p>
+    
+<div class="classmodal"><p>Class</p><form><input type="text" name="classname" placeholder="Name"><br><input type="text" id="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><input type="checkbox" name="weekday" value="monday">Monday<input type="checkbox" name="weekday" value="tuesday">Tuesday<input type="checkbox" name="weekday" value="wednesday">Wednesday<input type="checkbox" name="weekday" value="thursday">Thursday<input type="checkbox" name="weekday" value="friday">Friday<input type="checkbox" name="weekday" value="saturday">Saturday<input type="checkbox" name="weekday" value="sunday">Sunday<br><input type="range" name="priorityrange" id="priority" value="0" step="0.5" min="0" max="5"><br>Priority</form></div>
+    
+<div class="goalmodal"><p>Goal</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="range" id="priority" value="0" step="0.5" min="0" max="5"><br></form></div>
+    
+<div class="eventmodal"><p>Event</p><form><input type="text" name="goalname" placeholder="Name"><br><input type="text" name="starttime" placeholder="Start Time"><br><input type="text" name="endtime" placeholder="End Time"><br><input type="checkbox" name="weekday" value="monday">Monday<input type="checkbox" name="weekday" value="tuesday">Tuesday<input type="checkbox" name="weekday" value="wednesday">Wednesday<input type="checkbox" name="weekday" value="thursday">Thursday<input type="checkbox" name="weekday" value="friday">Friday<input type="checkbox" name="weekday" value="saturday">Saturday<input type="checkbox" name="weekday" value="sunday">Sunday<br>Priority</form></div>
+</body>
+    
+<script>
+var dialog;
+$(function() {
+    var name, start = '', end = '', priority = [], priority = 0;
+    
+    classdialog = $('.classmodal').dialog({
+        autoOpen: false,
+        height: 300,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Add Class": addClass,
+            Cancel: function() {
+                classdialog.dialog('close');
+            }
+        },
+        close: function() {
+            console.log('form closed');
+        }
+    });
+    
+    eventdialog = $('.eventmodal').dialog({
+        autoOpen: false,
+        height: 300,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Add Class": addClass,
+            Cancel: function() {
+                eventdialog.dialog('close');
+            }
+        },
+        close: function() {
+            console.log('form closed');
+        }
+    });
+    
+    goaldialog = $('.goalmodal').dialog({
+        autoOpen: false,
+        height: 300,
+        width: 350,
+        modal: true,
+        buttons: {
+            "Add Class": addClass,
+            Cancel: function() {
+                goaldialog.dialog('close');
+            }
+        },
+        close: function() {
+            console.log('form closed');
+        }
+    });
+    
+    function addClass() {
+        console.log($('#starttime').val());   
+    }
+    
+    $('#classlink').click(function() {
+        classdialog.dialog('open');
+    });
+    
+    $('#eventlink').click(function() {
+        eventdialog.dialog('open');
+    });
+    
+    $('#goallink').click(function() {
+        goaldialog.dialog('open');
+    });
+    
+    console.log(name + " : " + start + " : " + end + " : " + priority);
+    $('.output').html('<p>' + name + '</p>');
+});    
+</script>
+</html>
