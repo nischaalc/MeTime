@@ -237,12 +237,16 @@ $(function() {
         var postData = {title:n, stime:s, etime:e, pri:p, dtime:d.toString(), token:t};
         console.log(postData);
         
-        $.ajax({
+        
+        $.post(url, postData).done(function(data) {
+             console.log(data);
+        });
+        /*$.ajax({
             url: url,
             method: 'POST',
             data: postData
         }).done(function (msg) {
             alert('Done: ' + msg); 
-        });
+        });*/
     }
 });
