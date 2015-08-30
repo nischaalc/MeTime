@@ -132,7 +132,8 @@ function displayWeather(icon, desc, high, low) {
 }
 
 $(function() {
-    var name = '', start = '', end = '', priority = 0, days = [];
+    var name, start, end, priority, days;
+    var token =  window.localStorage.getItem("googleUser.object");
     
     classdialog = $('.classmodal').dialog({
         autoOpen: false,
@@ -195,7 +196,7 @@ $(function() {
     });
     
     function addClass() {
-        name = $('#classname').val();
+        name = $('#className').val();
         start = $('#classStart').val();
         end = $('#classEnd').val();
         priority = $('#classPri').val();
@@ -204,7 +205,7 @@ $(function() {
                 return $(this).val();
             }).get();
         
-        console.log('Class - ' + name + ':' + start + ':' + end + ':' + priority + ':' + days);
+        pushItem(name, start, end, priority, days, token);
         
     }
     
@@ -213,9 +214,9 @@ $(function() {
         start = 0;
         end = 0;
         priority = $('#goalPri').val();
-        days = null;
+        days = ;
         
-        console.log('Goal - ' + name + ':' + priority);
+        pushItem(name, start, end, priority, days, token);
     }
     
     function addEvent() {
@@ -228,6 +229,17 @@ $(function() {
                 return $(this).val();
             }).get();
         
-        console.log('Event - ' + name + ':' + start + ':' + end + ':' + priority + ':' + days);
+        pushItem(name, start, end, priority, days, token);
+    }
+    
+    function pushItem(n, s, e, p, d, t) {
+        var url = 'https://metime.herokuapp.com/addItem'
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: {'name':n, 'start':s, 'end':e, 'priority':p, 'days':d,'token':t}
+        }).done(function (msg) {
+            alert('Done: ' + msg); 
+        });
     }
 });
