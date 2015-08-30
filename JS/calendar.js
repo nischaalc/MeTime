@@ -12,7 +12,7 @@ $(document).ready(function () {
     var accessToken = window.localStorage.getItem("googleUser.object");
     
     getLocation(today);
-    //getGCalEvents(accessToken);
+    getGCalEvents(accessToken);
     getWeather(loc, today);
     
     $('.spinner').fadeOut(750, function() {
@@ -23,13 +23,12 @@ $(document).ready(function () {
         $('#footer').fadeIn();
     });        
         
-    /*var name = getUrlVars().name;
+    var name = getUrlVars().name;
     if (name.indexOf('%20') != -1)
         name = name.replace('%20', ' ');
-    $('#username').text(name);    */
+    $('#username').text(name);    
 });
 
-/*
 function getGCalEvents(token) {
     var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
 
@@ -41,9 +40,8 @@ function getGCalEvents(token) {
             createCalendar();
         }
     });
-}*/
+}
 
-/*
 function createCalendar() {
     var height = ($(window).height() / 1.5);
 
@@ -75,13 +73,13 @@ function createCalendar() {
     
     var today = moment();
     $('#title').html("<h2>Information for " + today.toString().substring(0, 15) + "</h2>");
-}*/
+}
 
 function populateDate(date) {
         $('#title').html("<h2>Information for " + date.toString().substring(0, 15) + "</h2>");
 }
 
-/*
+
 function getUrlVars() {
     "use strict";
     var vars = [], hash;
@@ -93,7 +91,7 @@ function getUrlVars() {
         vars[hash[0]] = hash[1];
     }
     return vars;
-}*/
+}
 
 function getLocation(date) {
     var url = 'http://api.wunderground.com/api/a13f71c3ae3eecbb/geolookup/q/autoip.json';
@@ -134,7 +132,7 @@ function displayWeather(icon, desc, high, low) {
 }
 
 $(function() {
-    var name, start = '', end = '', priority = [], priority = 0;
+    var name = '', start = '', end = '', priority = 0, days = [];
     
     classdialog = $('.classmodal').dialog({
         autoOpen: false,
@@ -158,7 +156,7 @@ $(function() {
         width: 350,
         modal: true,
         buttons: {
-            "Add Class": addClass,
+            "Add Class": addEvent,
             Cancel: function() {
                 eventdialog.dialog('close');
             }
@@ -174,7 +172,7 @@ $(function() {
         width: 350,
         modal: true,
         buttons: {
-            "Add Class": addClass,
+            "Add Class": addGoal,
             Cancel: function() {
                 goaldialog.dialog('close');
             }
@@ -183,10 +181,6 @@ $(function() {
             console.log('form closed');
         }
     });
-    
-    function addClass() {
-        console.log($('#starttime').val());   
-    }
     
     $('#classlink').click(function() {
         classdialog.dialog('open');
@@ -199,4 +193,41 @@ $(function() {
     $('#goallink').click(function() {
         goaldialog.dialog('open');
     });
+    
+    function addClass() {
+        name = $('#classname').val();
+        start = $('#classStart').val();
+        end = $('#classEnd').val();
+        priority = $('#classPri').val();
+        days = $('input[name=classWeek]:checked').map(function()
+            {
+                return $(this).val();
+            }).get();
+        
+        console.log('Class - ' + name + ':' + start + ':' + end + ':' + priority + ':' + days);
+        
+    }
+    
+    function addGoal() {
+        name = $('#goalName').val();
+        start = 0;
+        end = 0;
+        priority = $('#goalPri').val();
+        days = null;
+        
+        console.log('Goal - ' + name + ':' + priority);
+    }
+    
+    function addEvent() {
+        name = $('#eventName').val();
+        start = $('#eventStart').val();
+        end = $('#eventEnd').val();
+        priority = 0;
+        days = $('input[name=eventWeek]:checked').map(function()
+            {
+                return $(this).val();
+            }).get();
+        
+        console.log('Event - ' + name + ':' + start + ':' + end + ':' + priority + ':' + days);
+    }
 });
