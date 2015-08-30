@@ -21,7 +21,7 @@ $(document).ready(function () {
         });
         $('#dayinfo').fadeIn();
         $('#footer').fadeIn();
-    });        
+    });       
         
     var name = getUrlVars().name;
     if (name.indexOf('%20') != -1)
@@ -46,7 +46,7 @@ function createCalendar() {
     var height = ($(window).height() / 1.5);
 
     var day = moment().format('e');
-    if (day == 7)
+    if (day === 7)
         day = 0;
     
     $('#calendar').fullCalendar({
@@ -234,7 +234,7 @@ $(function() {
     
     function pushItem(n, s, e, p, d, t) {
         var url = 'https://metime.herokuapp.com/addItem';
-        var postData = {'name':n, 'start':s, 'end':e, 'priority':p, 'days':d.toString(),'token':t};
+        var postData = {title:n, stime:s, etime:e, pri:p, dtime:d.toString(), token:t};
         console.log(postData);
         
         $.ajax({
