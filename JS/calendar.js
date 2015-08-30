@@ -214,7 +214,7 @@ $(function() {
         start = 0;
         end = 0;
         priority = $('#goalPri').val();
-        days = ;
+        days = 0;
         
         pushItem(name, start, end, priority, days, token);
     }
