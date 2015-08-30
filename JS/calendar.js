@@ -233,11 +233,13 @@ $(function() {
     }
     
     function pushItem(n, s, e, p, d, t) {
-        var url = 'https://metime.herokuapp.com/addItem'
+        var url = 'https://metime.herokuapp.com/addItem';
+        var postData = {'name':n, 'start':s, 'end':e, 'priority':p, 'days':d,'token':t};
+        
         $.ajax({
             url: url,
             method: 'POST',
-            data: {'name':n, 'start':s, 'end':e, 'priority':p, 'days':d,'token':t}
+            data: 
         }).done(function (msg) {
             alert('Done: ' + msg); 
         });
