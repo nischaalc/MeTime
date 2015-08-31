@@ -37,9 +37,9 @@
     <div class="classmodal">
         <p>Class</p>
         <form>
-            <input type="text" id="className" placeholder="Name"><br>
-            <input type="text" id="classStart" placeholder="Start Time"><br>
-            <input type="text" id="classEnd" placeholder="End Time"><br>
+            Event Name: <input type="text" id="className"><br>
+            Start Time: <input type="text" id="classStart" placeholder="HH:mm (24 hour format)"><br>
+            End Time: <input type="text" id="classEnd" placeholder="HH:mm (24 hour format)"><br>
             <input type="checkbox" name="classWeek" value="Monday">Monday
             <input type="checkbox" name="classWeek" value="Tuesday">Tuesday
             <input type="checkbox" name="classWeek" value="Wednesday">Wednesday
@@ -54,7 +54,7 @@
     <div class="goalmodal">
         <p>Goal</p>
         <form>
-            <input type="text" id="goalName" placeholder="Name"><br>
+            Goal Name: <input type="text" id="goalName"><br>
             Priority<input type="range" id="goalPri" value="0" step="0.5" min="0" max="5"><br>
         </form>
     </div>
@@ -62,16 +62,10 @@
     <div class="eventmodal">
         <p>Event</p>
         <form>
-            <input type="text" id="eventName" placeholder="Name"><br>
-            <input type="text" id="eventStart" placeholder="Start Time"><br>
-            <input type="text" id="eventEnd" placeholder="End Time"><br>
-            <input type="checkbox" name="eventWeek" value="Monday">Monday
-            <input type="checkbox" name="eventWeek" value="Tuesday">Tuesday
-            <input type="checkbox" name="eventWeek" value="Wednesday">Wednesday
-            <input type="checkbox" name="eventWeek" value="Thursday">Thursday
-            <input type="checkbox" name="eventWeek" value="Friday">Friday
-            <input type="checkbox" name="eventWeek" value="Saturday">Saturday
-            <input type="checkbox" name="eventWeek" value="Sunday">Sunday<br>
+            Event Name: <input type="text" id="eventName" placeholder="Name"><br>
+            Start Time: <input type="text" id="eventStart" placeholder="HH:mm (24 hour format)"><br>
+            End Time: <input type="text" id="eventEnd" placeholder="HH:mm (24 hour format)"><br>
+            Date: <input type="text" id="eventDay" placeholder="YYYY-MM-DD"><br>
         </form>
     </div>
     
