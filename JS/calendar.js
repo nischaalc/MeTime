@@ -14,7 +14,7 @@ $(document).ready(function () {
     getLocation(today);
     getGCalEvents(accessToken);
     getWeather(loc, today);
-    
+    console.log("TOKEN FOR CAMERON BECAUSE HE IS LAZY" + accessToken);
     $('.spinner').fadeOut(750, function() {
         $('#calendar').fadeIn(function() {
             $('#calendar').css('visibility', 'visible');
