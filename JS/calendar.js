@@ -237,7 +237,18 @@ $(function() {
         console.log(postData);
         
         $.post(url, postData).done(function(data) {
-             console.log(data);
+            console.log(data);
+                
+            var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
+
+            $.ajax({
+                url: url,
+                dataType: 'json',
+                success: function(data, status) {
+                    allEvents = data.items;
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            });
         });
     }
     
