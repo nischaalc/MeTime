@@ -239,7 +239,7 @@ $(function() {
         $.post(url, postData).done(function(data) {
             console.log(data);
                 
-            var url = 'https://metime.herokuapp.com/calEvents?token=' + token;
+            var url = 'https://metime.herokuapp.com/calEvents?token=' + t;
 
             $.ajax({
                 url: url,
