@@ -226,7 +226,7 @@ $(function() {
         start = $('#eventStart').val();
         end = $('#eventEnd').val();
         priority = 0;
-        days = ($'#eventDay').val();
+        days = $('#eventDay').val();
         type = 'Event';
         
         pushItem(name, start, end, priority, days, type, token);
