@@ -226,10 +226,7 @@ $(function() {
         start = $('#eventStart').val();
         end = $('#eventEnd').val();
         priority = 0;
-        days = $('input[name=eventWeek]:checked').map(function()
-            {
-                return $(this).val();
-            }).get();
+        days = ($'#eventDay').val();
         type = 'Event';
         
         pushItem(name, start, end, priority, days, type, token);
@@ -243,5 +240,14 @@ $(function() {
         $.post(url, postData).done(function(data) {
              console.log(data);
         });
+    }
+    
+    function pushEvent(n, s, e, d, i, t) {
+        var postData = {title:n, stime:s, etime:e, eday:d, token:t, itype:i};
+        console.log(postData);
+        
+        /*$.post(url, postData).done(function(data) {
+             console.log(data);
+        });*/
     }
 });
