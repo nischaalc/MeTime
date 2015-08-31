@@ -242,6 +242,7 @@ $(function() {
     }
     
     function pushEvent(n, s, e, d, i, t) {
+        var url = 'https://metime.herokuapp.com/addItem';
         var postData = {title:n, stime:s, etime:e, eday:d, token:t, itype:i};
         console.log(postData);
         
