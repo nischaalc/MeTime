@@ -225,11 +225,10 @@ $(function() {
         name = $('#eventName').val();
         start = $('#eventStart').val();
         end = $('#eventEnd').val();
-        priority = 0;
         days = $('#eventDay').val();
         type = 'Event';
         
-        pushItem(name, start, end, priority, days, type, token);
+        pushEvent(name, start, end, days, type, token);
     }
     
     function pushItem(n, s, e, p, d, i, t) {
@@ -246,8 +245,8 @@ $(function() {
         var postData = {title:n, stime:s, etime:e, eday:d, token:t, itype:i};
         console.log(postData);
         
-        /*$.post(url, postData).done(function(data) {
+        $.post(url, postData).done(function(data) {
              console.log(data);
-        });*/
+        });
     }
 });
