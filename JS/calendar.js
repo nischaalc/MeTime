@@ -37,6 +37,7 @@ function getGCalEvents(token) {
         dataType: 'json',
         success: function(data, status) {
             allEvents = data.items;
+            console.log(allEvents);
             createCalendar();
         }
     });
