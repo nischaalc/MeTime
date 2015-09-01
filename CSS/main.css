@@ -76,10 +76,6 @@ div {
     color: white;
 }
 
-#weathertitle {
-    font-size: 1.8rem;
-}
-
 #weather .temp {
     font-size: 1.2rem;   
 }
