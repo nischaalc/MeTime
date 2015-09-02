@@ -4,7 +4,12 @@ body {
 }
 
 div {
-    display: block
+    display: block;
+}
+
+li {
+    list-style-type: none;
+    font-size: 1.2rem;
 }
 
 #topbar {

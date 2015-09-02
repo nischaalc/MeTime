@@ -14,6 +14,7 @@ $(document).ready(function () {
     getLocation(today);
     getGCalEvents(accessToken);
     getWeather(loc, today);
+    createCalendar();
     
     console.log("TOKEN FOR CAMERON BECAUSE HE IS LAZY" + accessToken);
     $('.spinner').fadeOut(750, function() {
@@ -64,6 +65,7 @@ function createCalendar() {
         dayClick: function(date, jsEvent, view) {
             populateDate(date);
             getWeather(loc, date);
+            getEvents(date);
         },
         loading: function(isLoading, view) {
             if (isLoading) 
@@ -93,6 +95,32 @@ function getUrlVars() {
         vars[hash[0]] = hash[1];
     }
     return vars;
+}
+
+function getEvents(date) {
+    var nDate = date.toDate().getDate() + 1;
+    var nYear = date.toDate().getFullYear();
+    var nMon = date.toDate().getMonth() + 1;
+
+    var aDate = moment(nYear + '-' + nMon + '-' + nDate, 'YYYY-MM-DD');
+    var goals = '', events = '', classes = '';
+    allEvents.forEach(function(entry) {
+        var compDate = moment(entry['start'], 'YYYY-MM-DD');
+        var tf = moment(aDate).isSame(compDate);
+        
+        if (tf) {
+            if (entry['description'] == 'MeTime.Event') 
+                events = events + entry['title'] + '<br>';
+            else if (entry['description'] == 'MeTime.Class') 
+                classes = classes + entry['title'] + '<br>';
+            else if (entry['description'] == 'MeTime.Goal')
+                goals = goals + entry['title'] + '<br>';
+        }
+    });
+    
+    $('.classlist').html('<span>' + classes + '</span>');
+    $('.eventlist').html('<span>' + events + '</span>');
+    $('.goallist').html('<span>' + goals + '</span>');
 }
 
 function getLocation(date) {
