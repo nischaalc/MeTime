@@ -14,7 +14,6 @@ $(document).ready(function () {
     getLocation(today);
     getGCalEvents(accessToken);
     getWeather(loc, today);
-    createCalendar();
     
     console.log("TOKEN FOR CAMERON BECAUSE HE IS LAZY" + accessToken);
     $('.spinner').fadeOut(750, function() {
@@ -65,7 +64,7 @@ function createCalendar() {
         dayClick: function(date, jsEvent, view) {
             populateDate(date);
             getWeather(loc, date);
-            //getEvents(date);
+            getEvents(date);
         },
         loading: function(isLoading, view) {
             if (isLoading) 
