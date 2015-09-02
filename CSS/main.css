@@ -4,7 +4,7 @@ body {
 }
 
 div {
-    display: block;
+    display: block
 }
 
 #topbar {
@@ -59,16 +59,22 @@ div {
 
 #dayinfo {
     height: 450px;   
+    width: 100%;
+    text-align: center;
+}
+
+#dayinfo div {
+    display: inline-block;
 }
 
 #title {
     text-align: center;
 }
 
-#weather {
+#events {
     height: 300px;
     width: 300px;
-    background-color: #2274a5;
+    background-color: #262626;
     border-radius: 10px;
     margin: 2rem;
     text-align: center;
@@ -76,12 +82,26 @@ div {
     color: white;
 }
 
-#weather .temp {
-    font-size: 1.2rem;   
+#class {
+    height: 300px;
+    width: 300px;
+    background-color: #B3001B;
+    border-radius: 10px;
+    margin: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    color: white;
 }
 
-#weather .desc {
-    font-size: 1.2rem;   
+#goals {
+    height: 300px;
+    width: 300px;
+    background-color: #1F2041;
+    border-radius: 10px;
+    margin: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    color: white;
 }
 
 .modal {

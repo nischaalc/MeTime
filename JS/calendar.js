@@ -14,6 +14,7 @@ $(document).ready(function () {
     getLocation(today);
     getGCalEvents(accessToken);
     getWeather(loc, today);
+    
     console.log("TOKEN FOR CAMERON BECAUSE HE IS LAZY" + accessToken);
     $('.spinner').fadeOut(750, function() {
         $('#calendar').fadeIn(function() {
@@ -124,12 +125,12 @@ function getWeather(zip, date) {
 }
 
 function displayWeather(icon, desc, high, low) {
-    var strHtml = '<img src=' + icon + ' class="icon"/>';
-    strHtml = strHtml + '<p class="temp">High: ' + high + ' &deg;F</p>';
-    strHtml = strHtml + '<p class="temp">Low: ' + low + ' &deg;F</p>';
-    strHtml = strHtml + '<p class="desc">' + desc + '</p>';
+    var strHtml = '';
+    strHtml = strHtml + '<h3>High: ' + high + '&deg;F, ';
+    strHtml = strHtml + '   Low: ' + low + '&deg;F, ';
+    strHtml = strHtml + desc + '</h3>';
     
-    $('.weatherobject').html(strHtml);
+    $('#weather').html(strHtml);
 }
 
 $(function() {
