@@ -65,7 +65,7 @@ function createCalendar() {
         dayClick: function(date, jsEvent, view) {
             populateDate(date);
             getWeather(loc, date);
-            getEvents(date);
+            //getEvents(date);
         },
         loading: function(isLoading, view) {
             if (isLoading) 
