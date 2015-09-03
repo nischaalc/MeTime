@@ -85,6 +85,7 @@ li {
     text-align: center;
     padding: 0.5rem;
     color: white;
+    overflow: hidden;
 }
 
 #class {
@@ -96,6 +97,7 @@ li {
     text-align: center;
     padding: 0.5rem;
     color: white;
+    overflow: hidden;
 }
 
 #goals {
@@ -107,6 +109,7 @@ li {
     text-align: center;
     padding: 0.5rem;
     color: white;
+    overflow: hidden;
 }
 
 .modal {
@@ -185,5 +188,5 @@ label {
     float: left;
     text-align: right;
     margin-right: 20px;
-    width: 100px;
+    width: 100px;   
 }
