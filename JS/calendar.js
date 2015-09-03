@@ -166,8 +166,8 @@ $(function() {
     
     classdialog = $('.classmodal').dialog({
         autoOpen: false,
-        height: 300,
-        width: 350,
+        height: 400,
+        width: 450,
         modal: true,
         buttons: {
             "Add Class": addClass,
@@ -182,11 +182,11 @@ $(function() {
     
     eventdialog = $('.eventmodal').dialog({
         autoOpen: false,
-        height: 300,
-        width: 350,
+        height: 400,
+        width: 450,
         modal: true,
         buttons: {
-            "Add Class": addEvent,
+            "Add Event": addEvent,
             Cancel: function() {
                 eventdialog.dialog('close');
             }
@@ -198,11 +198,11 @@ $(function() {
     
     goaldialog = $('.goalmodal').dialog({
         autoOpen: false,
-        height: 300,
-        width: 350,
+        height: 400,
+        width: 450,
         modal: true,
         buttons: {
-            "Add Class": addGoal,
+            "Add Goal": addGoal,
             Cancel: function() {
                 goaldialog.dialog('close');
             }
