@@ -174,3 +174,16 @@ select {
     -webkit-transform: rotate(-360deg);
     }
 }
+
+/* Modal CSS */
+
+.ui-dialog-title {
+    color: #2274a5;
+}
+
+label {
+    float: left;
+    text-align: right;
+    margin-right: 20px;
+    width: 100px;
+}

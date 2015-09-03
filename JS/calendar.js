@@ -269,15 +269,7 @@ $(function() {
             console.log(data);
                 
             var url = 'https://metime.herokuapp.com/calEvents?token=' + t;
-
-            $.ajax({
-                url: url,
-                dataType: 'json',
-                success: function(data, status) {
-                    allEvents = data.items;
-                    $('#calendar').fullCalendar('refetchEvents');
-                }
-            });
+            
         });
     }
     
@@ -291,3 +283,7 @@ $(function() {
         });
     }
 });
+
+function onRangeChanged(value) {
+    document.getElementById('goalPri')  
+}   
