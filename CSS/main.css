@@ -79,7 +79,7 @@ li {
 #events {
     height: 300px;
     width: 300px;
-    background-color: #262626;
+    background-color: #297373;
     border-radius: 10px;
     margin: 2rem;
     text-align: center;
@@ -189,4 +189,10 @@ label {
     text-align: right;
     margin-right: 20px;
     width: 100px;   
+}
+
+.checkboxgrid li {
+    display: block;
+    width: 25%;
+    float: left;
 }

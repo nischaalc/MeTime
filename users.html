@@ -40,13 +40,15 @@
             <label>Class Name:</label><input type="text" id="className"><br>
             <label>Start Time:</label><input type="text" id="classStart" placeholder="HH:mm (24 hour format)"><br>
             <label>End Time:</label><input type="text" id="classEnd" placeholder="HH:mm (24 hour format)"><br>
-            <input type="checkbox" name="classWeek" value="Monday">Monday
-            <input type="checkbox" name="classWeek" value="Tuesday">Tuesday
-            <input type="checkbox" name="classWeek" value="Wednesday">Wednesday
-            <input type="checkbox" name="classWeek" value="Thursday">Thursday
-            <input type="checkbox" name="classWeek" value="Friday">Friday
-            <input type="checkbox" name="classWeek" value="Saturday">Saturday
-            <input type="checkbox" name="classWeek" value="Sunday">Sunday<br>
+            <ul class="checkboxgrid">
+                <input type="checkbox" name="classWeek" value="Monday">Monday
+                <input type="checkbox" name="classWeek" value="Tuesday">Tuesday
+                <input type="checkbox" name="classWeek" value="Wednesday">Wednesday
+                <input type="checkbox" name="classWeek" value="Thursday">Thursday
+                <input type="checkbox" name="classWeek" value="Friday">Friday
+                <input type="checkbox" name="classWeek" value="Saturday">Saturday
+                <input type="checkbox" name="classWeek" value="Sunday">Sunday<br>
+            </ul>
             <label>Priority</label><br><input type="range" id="classPri" id="priority" value="0" step="0.5" min="0" max="5">
         </form>
     </div>
@@ -55,7 +57,7 @@
         <p>Goal</p>
         <form>
             <label>Goal Name:</label><input type="text" id="goalName"><br>
-            <label>Priority</lable><input type="range" id="goalPri" value="0" step="0.5" min="0" max="5" onchange="onRangeChanged(this.value);"><br>
+            <label>Priority</label><input type="range" id="goalPri" value="0" step="0.5" min="0" max="5" onchange="onRangeChanged(this.value);"><br>
         </form>
     </div>
     
