@@ -275,6 +275,7 @@ $(function() {
         $.post(url, postData).done(function(data) {
             console.log(data);
             //window.location.href = 'http://nischaalc.github.io/MeTime';
+            showToast(i);
         });
     }
     
@@ -286,6 +287,30 @@ $(function() {
         $.post(url, postData).done(function(data) {
             console.log(data);
             //window.location.href = 'http://nischaalc.github.io/MeTime';
+            showToast(i);
         });
+    }
+    
+    function showToast(type) {
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": false,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "onclick": location.reload();
+        }
+        
+        toastr.success('Added ' + type + 'to calendar. Click here to refresh the page!', 'Success!');
+        
     }
 }); 
