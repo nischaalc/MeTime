@@ -270,6 +270,8 @@ $(function() {
         var url = 'https://metime.herokuapp.com/addItem';
         var postData = {title:n, stime:s, etime:e, pri:p, dtime:d.toString(), token:t, itype:i};
         
+        console.log(postData);
+        
         $.post(url, postData).done(function(data) {
             console.log(data);
             //window.location.href = 'http://nischaalc.github.io/MeTime';
@@ -280,13 +282,10 @@ $(function() {
         var url = 'https://metime.herokuapp.com/addItem';
         var postData = {title:n, stime:s, etime:e, eday:d, token:t, itype:i};
         
+        console.log(postData);
         $.post(url, postData).done(function(data) {
             console.log(data);
             //window.location.href = 'http://nischaalc.github.io/MeTime';
         });
     }
-});
-
-function onRangeChanged(value) {
-    document.getElementById('goalPri')  
-}   
+}); 

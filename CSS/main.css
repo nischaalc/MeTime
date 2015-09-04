@@ -185,6 +185,10 @@ select {
     font-family: "Montserrat";
 }
 
+.modalDialog .ui-dialog-titlebar {
+    
+}
+
 label {
     float: left;
     text-align: right;
