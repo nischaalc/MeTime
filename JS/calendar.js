@@ -307,8 +307,8 @@ $(function() {
             "hideEasing": "linear",
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut",
-            "onclick": function() {location.reload;}
-        }
+            "onclick": function() {location.reload();}
+        };
         
         toastr.success('Added ' + title + ' to calendar. Click here to refresh the page!', 'Success!');
         
