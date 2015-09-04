@@ -271,7 +271,8 @@ $(function() {
         var postData = {title:n, stime:s, etime:e, pri:p, dtime:d.toString(), token:t, itype:i};
         
         $.post(url, postData).done(function(data) {
-            window.location.href = 'http://nischaalc.github.io/MeTime';
+            console.log(data);
+            //window.location.href = 'http://nischaalc.github.io/MeTime';
         });
     }
     
@@ -280,7 +281,8 @@ $(function() {
         var postData = {title:n, stime:s, etime:e, eday:d, token:t, itype:i};
         
         $.post(url, postData).done(function(data) {
-             window.location.href = 'http://nischaalc.github.io/MeTime';
+            console.log(data);
+            //window.location.href = 'http://nischaalc.github.io/MeTime';
         });
     }
 });
