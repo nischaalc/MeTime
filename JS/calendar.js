@@ -307,10 +307,10 @@ $(function() {
             "hideEasing": "linear",
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut",
-            "onclick": null
+            "onclick": function() {location.reload;}
         }
         
-        toastr.success('Added ' + type + 'to calendar. Click here to refresh the page!', 'Success!');
+        toastr.success('Added ' + type + ' to calendar. Click here to refresh the page!', 'Success!');
         
     }
 }); 
