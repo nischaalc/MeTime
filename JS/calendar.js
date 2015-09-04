@@ -287,11 +287,11 @@ $(function() {
         $.post(url, postData).done(function(data) {
             console.log(data);
             //window.location.href = 'http://nischaalc.github.io/MeTime';
-            showToast(i);
+            showToast(n);
         });
     }
     
-    function showToast(type) {
+    function showToast(title) {
         toastr.options = {
             "closeButton": false,
             "debug": false,
@@ -310,7 +310,7 @@ $(function() {
             "onclick": function() {location.reload;}
         }
         
-        toastr.success('Added ' + type + ' to calendar. Click here to refresh the page!', 'Success!');
+        toastr.success('Added ' + title + ' to calendar. Click here to refresh the page!', 'Success!');
         
     }
 }); 
