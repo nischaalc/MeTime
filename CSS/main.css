@@ -180,15 +180,16 @@ select {
 
 /* Modal CSS */
 
-.ui-dialog-title {
-    color: #2274a5;
+.modalDialog {
+    background: #2274a5;
+    font-family: "Montserrat";
 }
 
 label {
     float: left;
     text-align: right;
     margin-right: 20px;
-    width: 100px;   
+    width: 150px;   
 }
 
 .checkboxgrid li {

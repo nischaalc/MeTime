@@ -169,6 +169,8 @@ $(function() {
         height: 400,
         width: 450,
         modal: true,
+        title: 'Add Class',
+        dialogClass: 'modalDialog',
         buttons: {
             "Add Class": addClass,
             Cancel: function() {
@@ -185,6 +187,8 @@ $(function() {
         height: 400,
         width: 450,
         modal: true,
+        title: 'Add Event',
+        dialogClass: 'modalDialog',
         buttons: {
             "Add Event": addEvent,
             Cancel: function() {
@@ -201,6 +205,8 @@ $(function() {
         height: 400,
         width: 450,
         modal: true,
+        title: 'Add Goal',
+        dialogClass: 'modalDialog',
         buttons: {
             "Add Goal": addGoal,
             Cancel: function() {
@@ -263,23 +269,18 @@ $(function() {
     function pushItem(n, s, e, p, d, i, t) {
         var url = 'https://metime.herokuapp.com/addItem';
         var postData = {title:n, stime:s, etime:e, pri:p, dtime:d.toString(), token:t, itype:i};
-        console.log(postData);
         
         $.post(url, postData).done(function(data) {
-            console.log(data);
-                
-            var url = 'https://metime.herokuapp.com/calEvents?token=' + t;
-            
+            window.location.href = 'http://nischaalc.github.io/MeTime';
         });
     }
     
     function pushEvent(n, s, e, d, i, t) {
         var url = 'https://metime.herokuapp.com/addItem';
         var postData = {title:n, stime:s, etime:e, eday:d, token:t, itype:i};
-        console.log(postData);
         
         $.post(url, postData).done(function(data) {
-             console.log(data);
+             window.location.href = 'http://nischaalc.github.io/MeTime';
         });
     }
 });
